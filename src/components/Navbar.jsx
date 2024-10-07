@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { RiBloggerLine, RiContactsLine } from "react-icons/ri";
 
 function Navbar() {
@@ -60,7 +60,7 @@ function Navbar() {
         style={{ top }}
         ref={navRef}
       >
-        <div className="max-w-7xl w-full flex justify-between font-semibold p-3 items-center">
+        <div className="max-w-7xl w-full flex justify-between font-semibold p-4 items-center">
           <a href="/" className="text-4xl font-bold">
             <img
               src="/assets/android-chrome-192x192.png"
@@ -68,32 +68,31 @@ function Navbar() {
               alt="Logo."
             />
           </a>
-          <div className="sm:flex hidden gap-8 h-fit">
-            <a
-              className="hover:underline text-sm flex items-center gap-2"
-              href="/#home"
-            >
-              <InfoOutlinedIcon size={24} />
-              <span>About Us</span>
-            </a>
-            <a
-              className="hover:underline text-sm flex items-center gap-2"
-              href="/#skills"
-            >
-              <RiBloggerLine size={24} />
-              <span>Blogs</span>
-            </a>
-            <a
-              className="hover:underline text-sm flex items-center gap-2"
-              href="#contact"
-            >
-              <RiContactsLine size={20} />
-              Contact Us
-            </a>
-          </div>
-          <div className="bg-transparent flex flex-col justify-center">
-            <div className="relative sm:max-w-xl mx-auto">
-              <nav x-data="{ open: false }">
+          <div className="bg-transparent flex items-center gap-8">
+            <div className="sm:flex hidden gap-8 h-fit">
+              <a
+                className="hover:underline text-sm flex items-center gap-2"
+                href="/#home"
+              >
+                <InfoOutlinedIcon size={24} />
+                <span>About Us</span>
+              </a>
+              <a
+                className="hover:underline text-sm flex items-center gap-2"
+                href="/#skills"
+              >
+                <RiBloggerLine size={24} />
+                <span>Blogs</span>
+              </a>
+              <a
+                className="hover:underline text-sm flex items-center gap-2"
+                href="#contact"
+              >
+                <RiContactsLine size={20} />
+                Contact Us
+              </a>
+            </div>
+            <div className="relative flex place-items-center sm:max-w-xl mx-auto">
                 <button
                   className="text-black w-10 h-10 relative focus:outline-none bg-transparent"
                   onClick={toggle}
@@ -123,7 +122,6 @@ function Navbar() {
                     ></span>
                   </div>
                 </button>
-              </nav>
             </div>
           </div>
         </div>

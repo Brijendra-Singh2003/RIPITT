@@ -23,7 +23,7 @@ import {
   EmojiObjects,
   School,
 } from "@mui/icons-material";
-
+import bg01 from "./assets/bg01.jpeg";
 import Navbar from "./components/Navbar";
 const HomePage = () => {
   const achievements = [
@@ -54,6 +54,9 @@ const HomePage = () => {
           color: "primary.contrastText",
           py: 8,
           background: "linear-gradient(45deg, #1976d2 30%, #42a5f5 90%)",
+          backgroundImage: `url(${bg01})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <Container maxWidth="lg">

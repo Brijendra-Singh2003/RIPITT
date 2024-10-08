@@ -56,18 +56,22 @@ function Navbar() {
   return (
     <>
       <nav
-        className="w-full bg-white z-20 flex flex-col justify-center items-center sticky border-b border-slate-400"
+        className="w-full bg-white z-20 flex flex-col justify-center items-center sticky border-b border-slate-400 "
         id="nav"
         style={{ top }}
         ref={navRef}
       >
-        <div className="max-w-7xl w-full flex justify-between font-semibold p-4 items-center">
-          <a href="/" className="text-4xl font-bold">
+        <div className="max-w-7xl w-full flex  justify-between font-semibold p-4 items-center">
+          <a href="/" className="text-4xl flex gap-4 font-bold">
             <img
               src="/assets/android-chrome-192x192.png"
-              className="size-10"
+              className="size-14 bg-black"
               alt="Logo."
             />
+            <div className="">
+              <p className="text-4xl text-blue-700">RIPITT</p>
+              <p className="text-sm">foundation</p>
+            </div>
           </a>
           <div className="bg-transparent flex items-center gap-8">
             <div className="sm:flex hidden gap-8 h-fit">

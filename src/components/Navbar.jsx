@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { RiBloggerLine, RiContactsLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [prevScrollPos, setprevScrollPos] = useState(0);
@@ -22,10 +23,10 @@ function Navbar() {
 
       if (navRef.current) {
         const newTop = top + prevScrollPos - currentScrollPos;
-        if (newTop < -HEIGHT) {
-          setTop(-HEIGHT);
-        } else if (newTop > 0 || open) {
+        if (open || newTop > 0) {
           setTop(0);
+        } else if (newTop < -HEIGHT) {
+          setTop(-HEIGHT);
         } else {
           setTop(newTop);
         }
@@ -70,13 +71,13 @@ function Navbar() {
           </a>
           <div className="bg-transparent flex items-center gap-8">
             <div className="sm:flex hidden gap-8 h-fit">
-              <a
+              <Link
                 className="hover:underline text-sm flex items-center gap-2"
-                href="/#home"
+                to="/about"
               >
                 <InfoOutlinedIcon size={24} />
                 <span>About Us</span>
-              </a>
+              </Link>
               <a
                 className="hover:underline text-sm flex items-center gap-2"
                 href="/#skills"
@@ -93,35 +94,35 @@ function Navbar() {
               </a>
             </div>
             <div className="relative flex place-items-center sm:max-w-xl mx-auto">
-                <button
-                  className="text-black w-10 h-10 relative focus:outline-none bg-transparent"
-                  onClick={toggle}
-                >
-                  <span className="sr-only">Open main menu</span>
-                  <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span
-                      aria-hidden="true"
-                      className={
-                        "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
-                        (open ? "-rotate-45" : "-translate-y-1.5")
-                      }
-                    ></span>
-                    <span
-                      aria-hidden="true"
-                      className={
-                        "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
-                        (open ? "opacity-0" : "")
-                      }
-                    ></span>
-                    <span
-                      aria-hidden="true"
-                      className={
-                        "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
-                        (open ? "rotate-45" : "translate-y-1.5")
-                      }
-                    ></span>
-                  </div>
-                </button>
+              <button
+                className="text-black w-10 h-10 relative focus:outline-none bg-transparent"
+                onClick={toggle}
+              >
+                <span className="sr-only">Open main menu</span>
+                <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span
+                    aria-hidden="true"
+                    className={
+                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      (open ? "-rotate-45" : "-translate-y-1.5")
+                    }
+                  ></span>
+                  <span
+                    aria-hidden="true"
+                    className={
+                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      (open ? "opacity-0" : "")
+                    }
+                  ></span>
+                  <span
+                    aria-hidden="true"
+                    className={
+                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      (open ? "rotate-45" : "translate-y-1.5")
+                    }
+                  ></span>
+                </div>
+              </button>
             </div>
           </div>
         </div>

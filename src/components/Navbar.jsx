@@ -77,7 +77,7 @@ function Navbar() {
             <div className="sm:flex items-center hidden font-mono" style={{letterSpacing: 2}}>
               <NavLink
                 className={({ isActive }) =>
-                  "px-3 py-1.5 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
+                  "px-3 py-2 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
                   (isActive ? "text-[#1780d5]" : "")
                 }
                 to="/about"
@@ -87,7 +87,7 @@ function Navbar() {
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  "px-3 py-1.5 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
+                  "px-3 py-2 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
                   (isActive ? "text-[#1780d5]" : "")
                 }
                 to="/blog"
@@ -97,7 +97,7 @@ function Navbar() {
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
-                  "px-3 py-1.5 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
+                  "px-3 py-2 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
                   (isActive ? "text-[#1780d5]" : "")
                 }
                 to="/contact"

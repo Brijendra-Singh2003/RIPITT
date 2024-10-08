@@ -55,18 +55,22 @@ function Navbar() {
   return (
     <>
       <nav
-        className="w-full bg-white z-20 flex flex-col justify-center items-center sticky border-b border-slate-400"
+        className="w-full bg-white z-20 flex flex-col justify-center items-center sticky border-b border-slate-400 "
         id="nav"
         style={{ top }}
         ref={navRef}
       >
-        <div className="max-w-7xl w-full flex justify-between font-semibold p-4 items-center">
-          <a href="/" className="text-4xl font-bold">
+        <div className="max-w-7xl w-full flex  justify-between font-semibold p-4 items-center">
+          <a href="/" className="text-4xl flex gap-4 font-bold">
             <img
               src="/assets/android-chrome-192x192.png"
-              className="size-10"
+              className="size-14 bg-black"
               alt="Logo."
             />
+            <div className="">
+              <p className="text-4xl text-blue-700">RIPITT</p>
+              <p className="text-sm">foundation</p>
+            </div>
           </a>
           <div className="bg-transparent flex items-center gap-8">
             <div className="sm:flex hidden gap-8 h-fit">
@@ -93,35 +97,35 @@ function Navbar() {
               </a>
             </div>
             <div className="relative flex place-items-center sm:max-w-xl mx-auto">
-                <button
-                  className="text-black w-10 h-10 relative focus:outline-none bg-transparent"
-                  onClick={toggle}
-                >
-                  <span className="sr-only">Open main menu</span>
-                  <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span
-                      aria-hidden="true"
-                      className={
-                        "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
-                        (open ? "-rotate-45" : "-translate-y-1.5")
-                      }
-                    ></span>
-                    <span
-                      aria-hidden="true"
-                      className={
-                        "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
-                        (open ? "opacity-0" : "")
-                      }
-                    ></span>
-                    <span
-                      aria-hidden="true"
-                      className={
-                        "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
-                        (open ? "rotate-45" : "translate-y-1.5")
-                      }
-                    ></span>
-                  </div>
-                </button>
+              <button
+                className="text-black w-10 h-10 relative focus:outline-none bg-transparent"
+                onClick={toggle}
+              >
+                <span className="sr-only">Open main menu</span>
+                <div className="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span
+                    aria-hidden="true"
+                    className={
+                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      (open ? "-rotate-45" : "-translate-y-1.5")
+                    }
+                  ></span>
+                  <span
+                    aria-hidden="true"
+                    className={
+                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      (open ? "opacity-0" : "")
+                    }
+                  ></span>
+                  <span
+                    aria-hidden="true"
+                    className={
+                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      (open ? "rotate-45" : "translate-y-1.5")
+                    }
+                  ></span>
+                </div>
+              </button>
             </div>
           </div>
         </div>

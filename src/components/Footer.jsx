@@ -13,6 +13,7 @@ import {
   Send,
   ArrowRight,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
@@ -78,19 +79,19 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-blue-600">
+            <h3 className="text-lg font-semibold mb-6 text-blue-600">
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-4">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-gray-600 hover:text-blue-600 flex items-center group"
                   >
-                    <ArrowRight className="h-4 w-4 mr-2 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 w-4 mr-2 ml-0 transition-all group-hover:ml-1 group-hover:mr-1" />
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -98,10 +99,10 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-blue-600">
+            <h3 className="text-lg font-semibold mb-6 text-blue-600">
               Our Services
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-4">
               {services.map((service, index) => (
                 <li key={index} className="text-gray-600">
                   {service}
@@ -111,7 +112,7 @@ const Footer = () => {
           </div>
 
           {/* Newsletter & Contact */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h3 className="text-lg font-semibold text-blue-600">
               Stay Updated
             </h3>
@@ -125,7 +126,7 @@ const Footer = () => {
                 <Send className="h-4 w-4" />
               </Button>
             </div>
-            <div className="space-y-2 mt-4">
+            <div className="space-y-4 mt-4">
               <div className="flex items-center text-gray-600">
                 <Mail className="h-4 w-4 mr-2" />
                 <span>contact@ripitt.org</span>

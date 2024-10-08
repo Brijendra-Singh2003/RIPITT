@@ -1,19 +1,18 @@
 import React from "react";
-import { Card, CardContent } from "@mui/material";
 import { Button } from "@mui/material";
 import { Input } from "@mui/material";
-// import { hr } from "@mui/material";
+
 import {
   Facebook,
   Twitter,
-  Linkedin,
+  LinkedIn,
   Instagram,
   Mail,
   Phone,
-  MapPin,
+  PinDrop,
   Send,
   ArrowRight,
-} from "lucide-react";
+} from "@mui/icons-material";
 
 const Footer = () => {
   const quickLinks = [
@@ -33,7 +32,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-50 pt-16 pb-8">
+    <footer className="bg-gray-50 mt-8 p-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -65,7 +64,7 @@ const Footer = () => {
                 size="icon"
                 className="hover:text-blue-600"
               >
-                <Linkedin className="h-5 w-5" />
+                <LinkedIn className="h-5 w-5" />
               </Button>
               <Button
                 variant="ghost"
@@ -136,7 +135,7 @@ const Footer = () => {
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center text-gray-600">
-                <MapPin className="h-4 w-4 mr-2" />
+                <PinDrop className="h-4 w-4 mr-2" />
                 <span>123 Innovation Drive, Tech City</span>
               </div>
             </div>

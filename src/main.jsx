@@ -6,6 +6,7 @@ import "./global.css";
 import Navbar from "./components/Navbar.jsx";
 import App from "./App.jsx";
 import AboutUs from "./pages/Abut.jsx";
+import Footer from "./components/Footer";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")).render(
             <>
               <Navbar />
               <Outlet />
+              <Footer />
             </>
           }
         >

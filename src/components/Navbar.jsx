@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { RiBloggerLine, RiContactsLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [prevScrollPos, setprevScrollPos] = useState(0);
@@ -56,46 +56,55 @@ function Navbar() {
   return (
     <>
       <nav
-        className="w-full bg-white z-20 flex flex-col justify-center items-center sticky border-b border-slate-400 "
+        className="w-full bg-white z-20 flex flex-col justify-center items-center sticky shadow"
         id="nav"
         style={{ top }}
         ref={navRef}
       >
-        <div className="max-w-7xl w-full flex  justify-between font-semibold p-4 items-center">
-          <a href="/" className="text-4xl flex gap-4 font-bold">
+        <div className="max-w-7xl w-full flex justify-between font-semibold px-4">
+          <a href="/" className="text-4xl flex gap-4 font-bold p-4">
             <img
               src="/assets/android-chrome-192x192.png"
-              className="size-14 bg-black"
+              className="size-12 bg-black"
               alt="Logo."
             />
-            <div className="">
-              <p className="text-4xl text-blue-700">RIPITT</p>
+            <div className="-space-y-2">
+              <p className="text-3xl text-blue-700">RIPITT</p>
               <p className="text-sm">foundation</p>
             </div>
           </a>
-          <div className="bg-transparent flex items-center gap-8">
-            <div className="sm:flex hidden gap-8 h-fit">
-              <Link
-                className="hover:underline text-sm flex items-center gap-2"
+          <div className="bg-transparent flex gap-8">
+            <div className="sm:flex items-center hidden font-mono" style={{letterSpacing: 2}}>
+              <NavLink
+                className={({ isActive }) =>
+                  "px-3 py-1.5 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
+                  (isActive ? "text-[#1780d5]" : "")
+                }
                 to="/about"
               >
                 <InfoOutlinedIcon size={24} />
-                <span>About Us</span>
-              </Link>
-              <a
-                className="hover:underline text-sm flex items-center gap-2"
-                href="/#skills"
+                <span>ABOUT</span>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  "px-3 py-1.5 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
+                  (isActive ? "text-[#1780d5]" : "")
+                }
+                to="/blog"
               >
                 <RiBloggerLine size={24} />
-                <span>Blogs</span>
-              </a>
-              <a
-                className="hover:underline text-sm flex items-center gap-2"
-                href="#contact"
+                <span>BLOGS</span>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  "px-3 py-1.5 flex rounded items-center gap-2 hover:bg-[#2691eb] transition hover:text-white " +
+                  (isActive ? "text-[#1780d5]" : "")
+                }
+                to="/contact"
               >
                 <RiContactsLine size={20} />
-                Contact Us
-              </a>
+                <span>CONTACT</span>
+              </NavLink>
             </div>
             <div className="relative flex place-items-center sm:max-w-xl mx-auto">
               <button

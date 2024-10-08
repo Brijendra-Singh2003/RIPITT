@@ -48,7 +48,6 @@ const HomePage = () => {
   return (
     <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
       {/* Hero Section */}
-      <Navbar />
       <Box
         sx={{
           bgcolor: "primary.main",

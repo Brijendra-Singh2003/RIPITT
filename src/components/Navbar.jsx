@@ -79,7 +79,7 @@ function Navbar() {
           >
             <NavLink
               className={({ isActive }) =>
-                "px-3 py-2 hidden sm:flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
+                "p-0.5 hidden sm:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-500 " +
                 (isActive ? "text-blue-700" : "")
               }
               to="/about"
@@ -89,7 +89,7 @@ function Navbar() {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                "px-3 py-2 hidden sm:flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
+                "p-0.5 hidden sm:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-500 " +
                 (isActive ? "text-blue-700" : "")
               }
               to="/blog"
@@ -99,7 +99,7 @@ function Navbar() {
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                "px-3 py-2 hidden sm:flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
+                "p-0.5 hidden sm:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-500 " +
                 (isActive ? "text-blue-700" : "")
               }
               to="/contact"

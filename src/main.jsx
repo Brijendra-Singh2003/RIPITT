@@ -6,6 +6,7 @@ import "./global.css";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer";
 import { BiLoaderAlt } from "react-icons/bi";
+import ResearchAndDevelopmentPage from "./pages/RnDPage.jsx";
 
 const App =  lazy(() => import("./App.jsx"));
 const AboutUs =  lazy(() => import("./pages/Abut.jsx"));
@@ -35,6 +36,7 @@ createRoot(document.getElementById("root")).render(
           <Route index element={<App />} />
           <Route path="about" element={<AboutUs />} />
           <Route path="contact" element={<ContactUs />} />
+          <Route path="rnd" element={<ResearchAndDevelopmentPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

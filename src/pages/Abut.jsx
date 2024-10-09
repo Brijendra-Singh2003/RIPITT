@@ -1,5 +1,5 @@
 import React from "react";
-import { School, Work, Stars } from "@mui/icons-material";
+import { School, Work, Stars, Email, LinkedIn } from "@mui/icons-material";
 import bg02 from "../assets/leader.png";
 
 const leadershipTeam = [
@@ -122,7 +122,7 @@ const AboutPage = () => {
       </div>
 
       {/* Executive Leadership Section */}
-      <div className="container mx-auto my-12">
+      <div className="w-full max-w-7xl mx-auto my-12">
         <h2 className="text-4xl text-center font-semibold text-blue-600 mb-8">
           Executive Leadership
         </h2>
@@ -171,7 +171,7 @@ const AboutPage = () => {
 
       {/* Board of Directors Section */}
       <div className="bg-gray-50 py-12">
-        <div className="container mx-auto">
+        <div className="w-full max-w-7xl mx-auto">
           <h2 className="text-4xl text-center font-semibold text-blue-600 mb-8">
             Board of Directors
           </h2>
@@ -196,13 +196,13 @@ const AboutPage = () => {
                     aria-label="email"
                     className="text-blue-600 hover:text-blue-800"
                   >
-                    <span className="material-icons">email</span>
+                    <Email />
                   </button>
                   <button
                     aria-label="linkedin"
                     className="text-blue-600 hover:text-blue-800"
                   >
-                    <span className="material-icons">linkedin</span>
+                    <LinkedIn />
                   </button>
                 </div>
               </div>

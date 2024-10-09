@@ -15,26 +15,27 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
-  const quickLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Research", href: "/research" },
-    { name: "Incubation", href: "/incubation" },
-    { name: "Events", href: "/events" },
-    { name: "Careers", href: "/careers" },
-  ];
+const quickLinks = [
+  { name: "About Us", href: "/about" },
+  { name: "Research", href: "/research" },
+  { name: "Incubation", href: "/incubation" },
+  { name: "Events", href: "/events" },
+  { name: "Careers", href: "/careers" },
+];
 
-  const services = [
-    "Startup Incubation",
-    "Research & Development",
-    "Innovation Lab",
-    "Mentorship Program",
-    "Industry Collaboration",
-  ];
+const services = [
+  "Startup Incubation",
+  "Research & Development",
+  "Innovation Lab",
+  "Mentorship Program",
+  "Industry Collaboration",
+];
+
+const Footer = () => {
 
   return (
     <footer className="bg-gray-50 mt-8 p-8">
-      <div className="container mx-auto px-4">
+      <div className="w-full max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">

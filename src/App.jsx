@@ -24,26 +24,28 @@ import {
   School,
 } from "@mui/icons-material";
 import bg01 from "./assets/bg01.jpeg";
-import Navbar from "./components/Navbar";
-const HomePage = () => {
-  const achievements = [
-    { title: "Startups Incubated", count: "50+", icon: Business },
-    { title: "Research Projects", count: "100+", icon: Science },
-    { title: "Industry Partners", count: "30+", icon: Group },
-  ];
+import AnimatedNumber from "./components/AnimatedNum";
 
-  const upcomingEvents = [
-    {
-      title: "Innovation Summit 2024",
-      date: "July 15-16, 2024",
-      description: "Annual gathering of innovators and industry leaders",
-    },
-    {
-      title: "AI Workshop Series",
-      date: "August 1-5, 2024",
-      description: "Hands-on workshops on latest AI technologies",
-    },
-  ];
+const achievements = [
+  { title: "Startups Incubated", count: 50, icon: Business },
+  { title: "Research Projects", count: 100, icon: Science },
+  { title: "Industry Partners", count: 30, icon: Group },
+];
+
+const upcomingEvents = [
+  {
+    title: "Innovation Summit 2024",
+    date: "July 15-16, 2024",
+    description: "Annual gathering of innovators and industry leaders",
+  },
+  {
+    title: "AI Workshop Series",
+    date: "August 1-5, 2024",
+    description: "Hands-on workshops on latest AI technologies",
+  },
+];
+
+const HomePage = () => {
 
   return (
     <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
@@ -93,7 +95,7 @@ const HomePage = () => {
                     sx={{ fontSize: 60, color: "primary.main", mb: 2 }}
                   />
                   <Typography variant="h3" color="primary.main" gutterBottom>
-                    {achievement.count}
+                    <AnimatedNumber value={achievement.count} />+
                   </Typography>
                   <Typography variant="h6" color="text.secondary">
                     {achievement.title}

@@ -61,7 +61,7 @@ function Navbar() {
         style={{ top }}
         ref={navRef}
       >
-        <div className="max-w-7xl w-full flex justify-between font-semibold px-4">
+        <div className="w-full max-w-7xl flex justify-between font-semibold px-4 xl:px-16">
           <a href="/" className="text-4xl flex gap-4 font-bold p-4">
             <img
               src="/assets/android-chrome-192x192.png"
@@ -73,39 +73,40 @@ function Navbar() {
               <p className="text-sm">foundation</p>
             </div>
           </a>
-          <div className="bg-transparent flex gap-8">
-            <div className="sm:flex items-center hidden font-mono" style={{letterSpacing: 2}}>
-              <NavLink
-                className={({ isActive }) =>
-                  "px-3 py-2 flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
-                  (isActive ? "text-blue-700" : "")
-                }
-                to="/about"
-              >
-                <InfoOutlinedIcon size={24} />
-                <span>ABOUT</span>
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  "px-3 py-2 flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
-                  (isActive ? "text-blue-700" : "")
-                }
-                to="/blog"
-              >
-                <RiBloggerLine size={24} />
-                <span>BLOGS</span>
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  "px-3 py-2 flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
-                  (isActive ? "text-blue-700" : "")
-                }
-                to="/contact"
-              >
-                <RiContactsLine size={20} />
-                <span>CONTACT</span>
-              </NavLink>
-            </div>
+          <div
+            className="flex items-center font-mono md:gap-4 xl:gap-8"
+            style={{ letterSpacing: 2 }}
+          >
+            <NavLink
+              className={({ isActive }) =>
+                "px-3 py-2 hidden sm:flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
+                (isActive ? "text-blue-700" : "")
+              }
+              to="/about"
+            >
+              <InfoOutlinedIcon size={24} />
+              <span>ABOUT</span>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                "px-3 py-2 hidden sm:flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
+                (isActive ? "text-blue-700" : "")
+              }
+              to="/blog"
+            >
+              <RiBloggerLine size={24} />
+              <span>BLOGS</span>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                "px-3 py-2 hidden sm:flex rounded items-center gap-2 hover:bg-blue-500 transition hover:text-white " +
+                (isActive ? "text-blue-700" : "")
+              }
+              to="/contact"
+            >
+              <RiContactsLine size={20} />
+              <span>CONTACT</span>
+            </NavLink>
             <div className="relative flex place-items-center sm:max-w-xl mx-auto">
               <button
                 className="text-black w-10 h-10 relative focus:outline-none bg-transparent"

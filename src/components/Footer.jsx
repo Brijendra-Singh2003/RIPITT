@@ -15,7 +15,7 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-const quickLinks = [
+export const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "Research", href: "/research" },
   { name: "Incubation", href: "/incubation" },
@@ -23,7 +23,7 @@ const quickLinks = [
   { name: "Careers", href: "/careers" },
 ];
 
-const services = [
+export const services = [
   "Startup Incubation",
   "Research & Development",
   "Innovation Lab",
@@ -46,7 +46,7 @@ const Footer = () => {
               Pioneering innovation and fostering technological advancement
               through research, incubation, and industry collaboration.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex sm:space-x-4">
               <Button
                 variant="ghost"
                 size="icon"

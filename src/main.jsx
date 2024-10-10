@@ -15,7 +15,7 @@ const ContactUs =  lazy(() => import("./pages/Contact.jsx"));
 const HomeLayout = (
   <>
     <Navbar />
-    <main className="min-h-screen">
+    <main className="min-h-screen w-screen min-w-80 overflow-x-hidden">
       <Suspense
         fallback={
           <BiLoaderAlt size={64} className="animate-spin mx-auto mt-24" />
@@ -37,6 +37,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="about" element={<AboutUs />} />
           <Route path="contact" element={<ContactUs />} />
           <Route path="rnd" element={<ResearchAndDevelopmentPage />} />
+          <Route path="*" element={<App />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -61,27 +61,22 @@ const HomePage = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <Container maxWidth="lg">
+        <div className="container mx-auto bg-[radial-gradient(#0005,#fff0)]">
           <Box textAlign="center" py={6}>
-            <Typography
-              variant="h2"
-              component="h1"
-              gutterBottom
-              fontWeight="bold"
+            <h2
+              className="font-bold text-4xl sm:text-5xl"
             >
               Transforming Ideas into Impact
-            </Typography>
-            <Typography
-              variant="h5"
-              paragraph
-              sx={{ maxWidth: 800, mx: "auto" }}
+            </h2>
+            <p
+              className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance"
             >
               RIPITT Foundation is a pioneering research and innovation hub
               dedicated to nurturing breakthrough technologies and empowering
               the next generation of entrepreneurs.
-            </Typography>
+            </p>
           </Box>
-        </Container>
+        </div>
       </Box>
 
       {/* Achievement Stats */}

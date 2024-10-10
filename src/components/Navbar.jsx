@@ -2,6 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { RiBloggerLine, RiContactsLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { quickLinks } from "./Footer";
+
+import styles from "./Navbar.module.css";
+import { cn } from "../lib/util";
 
 function Navbar() {
   const [prevScrollPos, setprevScrollPos] = useState(0);
@@ -12,6 +16,12 @@ function Navbar() {
   function toggle() {
     setopen((prevState) => !prevState);
     setTop(0);
+
+    if (document.body.style.overflowY === "hidden") {
+      document.body.style.overflowY = "";
+    } else {
+      document.body.style.overflowY = "hidden";
+    }
   }
 
   useEffect(() => {
@@ -50,6 +60,7 @@ function Navbar() {
     return () => {
       window.onscroll = null;
       window.onscrollend = null;
+      document.body.overflowY = "";
     };
   });
 
@@ -117,21 +128,21 @@ function Navbar() {
                   <span
                     aria-hidden="true"
                     className={
-                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      "block absolute h-0.5 w-5 bg-current transform transition ease-in-out " +
                       (open ? "-rotate-45" : "-translate-y-1.5")
                     }
                   ></span>
                   <span
                     aria-hidden="true"
                     className={
-                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      "block absolute h-0.5 w-5 bg-current transform transition ease-in-out " +
                       (open ? "opacity-0" : "")
                     }
                   ></span>
                   <span
                     aria-hidden="true"
                     className={
-                      "block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out " +
+                      "block absolute h-0.5 w-5 bg-current transform transition ease-in-out " +
                       (open ? "rotate-45" : "translate-y-1.5")
                     }
                   ></span>
@@ -141,6 +152,32 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      <div
+        className={cn(
+          "fixed z-10 border-t w-full top-20 bg-white h-screen overflow-y-scroll",
+          open ? styles.open : styles.close
+        )}
+      >
+        <ul className="pt-8 sm:pt-16 px-8 sm:px-16 w-full max-w-7xl font-semibold mx-auto">
+          {quickLinks.map((link, index) => (
+            <li key={index}>
+              <NavLink to={link.href} onClick={toggle}>
+                {({ isActive }) => (
+                  <span
+                    className={cn(
+                      "text-xl space-x-4 py-2 md:py-4 sm:px-8 sm:text-3xl hover:text-blue-600 hover:underline flex items-center group",
+                      isActive ? "text-blue-600 underline" : ""
+                    )}
+                  >
+                    <InfoOutlinedIcon />
+                    <span>{link.name}</span>
+                  </span>
+                )}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

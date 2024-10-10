@@ -85,7 +85,7 @@ function Navbar() {
             </div>
           </a>
           <div
-            className="flex items-center font-mono md:gap-4 xl:gap-8"
+            className="flex items-center font-mono gap-4 xl:gap-8"
             style={{ letterSpacing: 2 }}
           >
             <NavLink

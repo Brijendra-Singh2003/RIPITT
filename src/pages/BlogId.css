@@ -1,0 +1,143 @@
+/* customBlogReset.css */
+.noTailwind {
+    all: unset;
+    font-family: inherit;
+
+    /* Headings */
+    h1 {
+        font-size: 2.25rem;
+        /* 36px */
+        font-weight: 600;
+        margin: 1.5rem 0;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+        /* 30px */
+        font-weight: 600;
+        margin: 1.5rem 0;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        /* 24px */
+        font-weight: 600;
+        margin: 1.5rem 0;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        /* 20px */
+        font-weight: 600;
+        margin: 1.5rem 0;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+        /* 18px */
+        font-weight: 600;
+        margin: 1.5rem 0;
+    }
+
+    h6 {
+        font-size: 1rem;
+        /* 16px */
+        font-weight: 600;
+        margin: 1.5rem 0;
+    }
+
+    /* Paragraphs */
+    p {
+        font-size: 1.2rem;
+        /* 16px */
+        line-height: 1.625;
+        margin: 1rem 0;
+    }
+
+    /* Blockquote */
+    blockquote {
+        font-size: 1.25rem;
+        /* 20px */
+        font-weight: 500;
+        margin: 1rem 0;
+        padding: 1rem;
+        border-left: 4px solid #e2e8f0;
+        /* Default Tailwind gray-300 */
+    }
+
+    /* Lists */
+    ul,
+    ol {
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.25rem;
+    }
+
+    /* Links */
+    a {
+        color: #2563eb;
+        /* Default Tailwind blue-600 */
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: #3b82f6;
+        /* Default Tailwind blue-500 */
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Code and Preformatted Text */
+    code {
+        font-size: 0.875rem;
+        /* 14px */
+        background-color: #f7fafc;
+        /* Default Tailwind gray-100 */
+        padding: 0.2rem 0.4rem;
+    }
+
+    pre {
+        background-color: #f7fafc;
+        /* Default Tailwind gray-100 */
+        padding: 1rem;
+        overflow: auto;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        font-weight: 600;
+        background-color: #f7fafc;
+        /* Default Tailwind gray-100 */
+        padding: 0.5rem 1rem;
+    }
+
+    td {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Horizontal Rule */
+    hr {
+        border-color: #e2e8f0;
+        /* Default Tailwind gray-300 */
+        margin: 1.5rem 0;
+    }
+}
+
+.noTailwind * {
+    all: unset;
+    font-family: inherit;
+    display: revert;
+    /* Ensures the default display for tags like <p>, <h1>, <ul> */
+}

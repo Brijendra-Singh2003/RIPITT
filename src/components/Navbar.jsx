@@ -72,11 +72,11 @@ function Navbar() {
         style={{ top }}
         ref={navRef}
       >
-        <div className="w-full max-w-7xl flex justify-between font-semibold px-4 xl:px-16">
-          <a href="/" className="text-4xl flex gap-4 font-bold p-4">
+        <div className="container max-w-7xl flex justify-between font-semibold px-4 xl:px-16">
+          <a href="/" className="text-4xl flex items-center gap-4 font-bold p-3">
             <img
               src="/assets/android-chrome-192x192.png"
-              className="size-12 bg-black"
+              className="size-14 p-1 bg-black"
               alt="Logo."
             />
             <div className="-space-y-2">
@@ -85,43 +85,50 @@ function Navbar() {
             </div>
           </a>
           <div
-            className="flex items-center font-mono gap-4 xl:gap-8"
-            style={{ letterSpacing: 2 }}
+            className="flex items-center gap-4 xl:gap-8"
           >
             <NavLink
               className={({ isActive }) =>
-                "p-0.5 hidden sm:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-500 " +
+                "px-0.5 hidden md:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-600 " +
+                (isActive ? "text-blue-700" : "")
+              }
+              to="/rnd"
+              onClick={ScrollToTop}
+            >
+              <span>R&D</span>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                "px-0.5 hidden md:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-600 " +
                 (isActive ? "text-blue-700" : "")
               }
               to="/about"
               onClick={ScrollToTop}
             >
-              <InfoOutlinedIcon size={24} />
-              <span>ABOUT</span>
+              <span>About</span>
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                "p-0.5 hidden sm:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-500 " +
+                "px-0.5 hidden md:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-600 " +
                 (isActive ? "text-blue-700" : "")
               }
               to="/blog"
               onClick={ScrollToTop}
             >
-              <RiBloggerLine size={24} />
-              <span>BLOGS</span>
+              <span>Blogs</span>
             </NavLink>
             <NavLink
               className={({ isActive }) =>
-                "p-0.5 hidden sm:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-500 " +
+                "px-0.5 hidden md:flex items-center gap-2 border-y-4 border-transparent transition hover:text-blue-700 hover:border-b-blue-600 " +
                 (isActive ? "text-blue-700" : "")
               }
               to="/contact"
               onClick={ScrollToTop}
             >
-              <RiContactsLine size={20} />
-              <span>CONTACT</span>
+              <span>Contact</span>
             </NavLink>
-            <div className="relative flex place-items-center sm:max-w-xl mx-auto">
+
+            <div className="relative md:hidden flex place-items-center sm:max-w-xl mx-auto">
               <button
                 className="text-black w-10 h-10 relative focus:outline-none bg-transparent"
                 onClick={toggle}

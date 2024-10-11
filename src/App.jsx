@@ -34,13 +34,17 @@ const achievements = [
 
 const upcomingEvents = [
   {
+    title: "RIPITT Inauguration",
+    date: "8th November 2024"
+  },
+  {
     title: "Innovation Summit 2024",
-    date: "July 15-16, 2024",
+    date: "15-16 July, 2024",
     description: "Annual gathering of innovators and industry leaders",
   },
   {
     title: "AI Workshop Series",
-    date: "August 1-5, 2024",
+    date: "1-5 August, 2024",
     description: "Hands-on workshops on latest AI technologies",
   },
 ];

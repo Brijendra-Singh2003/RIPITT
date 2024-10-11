@@ -38,14 +38,14 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={HomeLayout}>
           <Route index element={<App />} />
-          <Route path="about" element={<AboutUs />} />
-          <Route path="blog" element={<Outlet />}>
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/blog" element={<Outlet />}>
             <Route index element={<Blog />} />
-            <Route path=":id" element={<BlogById />} />
+            <Route path="/blog/:id" element={<BlogById />} />
           </Route>
-          <Route path="contact" element={<ContactUs />} />
-          <Route path="rnd" element={<ResearchAndDevelopmentPage />} />
-          <Route path="*" element={<App />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/rnd" element={<ResearchAndDevelopmentPage />} />
+          <Route path="/:rest" element={<App />} />
         </Route>
       </Routes>
     </BrowserRouter>

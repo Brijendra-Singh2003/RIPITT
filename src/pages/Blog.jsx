@@ -100,8 +100,6 @@ function Blog() {
             <a
               className="mx-4 group mt-auto flex justify-center rounded items-center gap-2 bg-highlight transition bg-blue-600 py-2 px-4"
               href={"/blog/" + blog.id}
-              target="_blank"
-              rel="noreferrer"
             >
               <span>Read More</span>
               <FaExternalLinkAlt className="h-4 w-4 group-hover:ml-2 duration-300" />

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { quickLinks } from "./Footer";
 
 import styles from "./Navbar.module.css";
-import { cn } from "../lib/util";
+import { cn, ScrollToTop } from "../lib/util";
 
 function Navbar() {
   const [prevScrollPos, setprevScrollPos] = useState(0);
@@ -94,6 +94,7 @@ function Navbar() {
                 (isActive ? "text-blue-700" : "")
               }
               to="/about"
+              onClick={ScrollToTop}
             >
               <InfoOutlinedIcon size={24} />
               <span>ABOUT</span>
@@ -104,6 +105,7 @@ function Navbar() {
                 (isActive ? "text-blue-700" : "")
               }
               to="/blog"
+              onClick={ScrollToTop}
             >
               <RiBloggerLine size={24} />
               <span>BLOGS</span>
@@ -114,6 +116,7 @@ function Navbar() {
                 (isActive ? "text-blue-700" : "")
               }
               to="/contact"
+              onClick={ScrollToTop}
             >
               <RiContactsLine size={20} />
               <span>CONTACT</span>

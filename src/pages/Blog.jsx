@@ -1,6 +1,8 @@
 import React from "react";
 import bg_blog from "../assets/Blog.jpg";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { ScrollToTop } from "../lib/util";
 
 const blogs = [
   {
@@ -97,13 +99,14 @@ function Blog() {
             />
             <h2 className="mx-4 mt-4 text-black font-semibold px-1 text-xl">{blog.title}</h2>
             <span className="mx-4 mt-2 mb-4 text-gray-600 text-justify px-1">{blog.description}</span>
-            <a
+            <Link
               className="mx-4 group mt-auto flex justify-center rounded items-center gap-2 bg-highlight transition bg-blue-600 py-2 px-4"
-              href={"/blog/" + blog.id}
+              to={"/blog/" + blog.id}
+              onClick={ScrollToTop}
             >
               <span>Read More</span>
               <FaExternalLinkAlt className="h-4 w-4 group-hover:ml-2 duration-300" />
-            </a>
+            </Link>
           </div>
         ))}
       </div>

@@ -35,7 +35,7 @@ const achievements = [
 const upcomingEvents = [
   {
     title: "RIPITT Inauguration",
-    date: "8th November 2024"
+    date: "8th November 2024",
   },
   {
     title: "Innovation Summit 2024",
@@ -50,7 +50,6 @@ const upcomingEvents = [
 ];
 
 const HomePage = () => {
-
   return (
     <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
       {/* Hero Section */}
@@ -67,14 +66,10 @@ const HomePage = () => {
       >
         <div className="container mx-auto bg-[radial-gradient(#0005,#fff0)]">
           <Box textAlign="center" py={6}>
-            <h2
-              className="font-bold text-4xl sm:text-5xl"
-            >
+            <h2 className="font-bold text-4xl sm:text-5xl">
               Transforming Ideas into Impact
             </h2>
-            <p
-              className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance"
-            >
+            <p className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance">
               RIPITT Foundation is a pioneering research and innovation hub
               dedicated to nurturing breakthrough technologies and empowering
               the next generation of entrepreneurs.

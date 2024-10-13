@@ -23,9 +23,19 @@ function Contact() {
         }}
       >
         <div className="justify-center items-center mx-auto my-auto">
+          <Box textAlign="center" className="text-white" py={6}>
+            <h2 className="font-bold text-4xl sm:text-5xl">
+              Transforming Ideas into Impact
+            </h2>
+            <p className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance">
+              RIPITT Foundation is a pioneering research and innovation hub
+              dedicated to nurturing breakthrough technologies and empowering
+              the next generation of entrepreneurs.
+            </p>
+          </Box>
           <Typography
             variant="h3"
-            className="text-gray-100 justify-center mx-auto "
+            className="text-gray-100 text-center justify-center"
           >
             Contact Us
           </Typography>

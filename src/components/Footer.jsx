@@ -32,7 +32,6 @@ export const services = [
 ];
 
 const Footer = () => {
-
   return (
     <footer className="bg-gray-50 mt-8 p-8">
       <div className="w-full max-w-7xl mx-auto px-4">
@@ -46,7 +45,7 @@ const Footer = () => {
               Pioneering innovation and fostering technological advancement
               through research, incubation, and industry collaboration.
             </p>
-            <div className="flex sm:space-x-4">
+            <div className="flex sm:space-x-2">
               <Button
                 variant="ghost"
                 size="icon"

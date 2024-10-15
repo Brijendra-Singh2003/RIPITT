@@ -10,15 +10,16 @@ import NextTopLoader from "nextjs-toploader";
 
 const App = lazy(() => import("./App.jsx"));
 const AboutUs = lazy(() => import("./pages/Abut.jsx"));
+const Blog = lazy(() => import("./pages/Blog.jsx"));
+const BlogById = lazy(() => import("./pages/BlogById.jsx"));
 const ContactUs = lazy(() => import("./pages/Contact.jsx"));
 const ResearchAndDevelopmentPage = lazy(() => import("./pages/RnDPage.jsx"));
-const Blog = lazy(() => import("./pages/Blog.jsx"));
-const BlogById = lazy(() => import("./pages/Blog.Id.jsx"));
+const NotFound = lazy(() => import("./pages/404.jsx"));
 
 const HomeLayout = (
   <>
     <Navbar />
-    <main className="min-h-screen">
+    <main className="min-h-[calc(100vh-112px)] flex flex-col">
       <Suspense
         fallback={
           <BiLoaderAlt size={64} className="animate-spin mx-auto mt-24" />
@@ -39,13 +40,11 @@ createRoot(document.getElementById("root")).render(
         <Route path="/" element={HomeLayout}>
           <Route index element={<App />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/blog" element={<Outlet />}>
-            <Route index element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogById />} />
-          </Route>
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogById />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/rnd" element={<ResearchAndDevelopmentPage />} />
-          <Route path="/:rest" element={<App />} />
+          <Route path="/:not_found" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

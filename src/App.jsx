@@ -58,16 +58,16 @@ const HomePage = () => {
           bgcolor: "primary.main",
           color: "primary.contrastText",
           py: 8,
-          background: "linear-gradient(45deg, #1976d2 30%, #42a5f5 90%)",
+          backgroundColor: "#42a5f5",
           backgroundImage: `url(${bg01})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container mx-auto bg-[radial-gradient(#0005,#fff0)]">
+        <div className="container mx-auto">
           <Box textAlign="center" py={6}>
             <h2 className="font-bold text-4xl sm:text-5xl">
-              Transforming Ideas into Impact
+              Advancing Ideas, Innovating Reality
             </h2>
             <p className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance">
               RIPITT Foundation is a pioneering research and innovation hub

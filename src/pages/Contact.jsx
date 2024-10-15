@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, PinDrop as MapPin } from "@mui/icons-material";
 import image from "../assets/Contact.jpg";
 import {
   TextField,
@@ -24,42 +24,22 @@ function Contact() {
   return (
     <div>
       <div
-        className="w-full overflow-hidden flex item-center mx-auto my-auto"
+        className="bg-blue-500 py-16 text-center text-white bg-cover"
         style={{
-          maxHeight: "500px",
-          minHeight: "500px",
-          background: `url(${image})`,
+          backgroundImage: `url(${image})`,
         }}
       >
-        <div className="justify-center items-center mx-auto my-auto">
-          <Box textAlign="center" className="text-white" py={6}>
-            <h2 className="font-bold text-4xl sm:text-5xl">
-              Transforming Ideas into Impact
-            </h2>
-            <p className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance">
-              RIPITT Foundation is a pioneering research and innovation hub
-              dedicated to nurturing breakthrough technologies and empowering
-              the next generation of entrepreneurs.
-            </p>
-          </Box>
-          <Typography
-            variant="h3"
-            className="text-gray-100 text-center justify-center"
-          >
-            Contact Us
-          </Typography>
+        <div className="container mx-auto py-12">
+          <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
+          <p className="text-xl font-semibold max-w-2xl mx-auto text-balance">
+            Incubation, mentorship, collaborations, and other opportunities
+            with RIPITT.
+          </p>
         </div>
       </div>
-      <div className="bg-gray-100 min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <Typography
-            variant="h3"
-            component="h1"
-            className="text-center  text-gray-800 p-4"
-          >
-            Contact <span className="font-bold text-blue-600 ">RIPITT</span>
-          </Typography>
 
+      <div className="bg-gray-100 min-h-screen  py-12 px-2 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-7xl">
             {/* contact details */}
             <div
@@ -133,13 +113,13 @@ function Contact() {
             </div>
 
             {/* contact-form */}
-            <Paper elevation={3} className="p-8 col-span-2 h-full w-full">
+            <Paper
+              elevation={3}
+              className="p-4 sm:p-8 col-span-2 h-full w-full"
+            >
               <form className="space-y-6">
-                <div className="gap-4 flex ">
-                  <label
-                    htmlFor="Name"
-                    className="font-bold w-24 items-center justify-center mx-auto  my-auto"
-                  >
+                <div className="space-y-2">
+                  <label htmlFor="Name" className="font-bold ml-2">
                     Name :
                   </label>
                   {/* <br /> */}
@@ -152,11 +132,8 @@ function Contact() {
                     className="bg-white"
                   />
                 </div>
-                <div className="gap-4 flex ">
-                  <label
-                    htmlFor="email"
-                    className="font-bold w-24 items-center justify-center mx-auto  my-auto"
-                  >
+                <div className="space-y-2">
+                  <label className="font-bold ml-2" htmlFor="email">
                     Email :
                   </label>
                   {/* <br /> */}
@@ -169,11 +146,8 @@ function Contact() {
                     className="bg-white"
                   />
                 </div>
-                <div className="gap-4 flex ">
-                  <label
-                    htmlFor="Name"
-                    className="font-bold w-24 items-center justify-center mx-auto  my-auto"
-                  >
+                <div className="space-y-2">
+                  <label className="font-bold ml-2" htmlFor="Name">
                     Inquiry :
                   </label>
                   {/* <br /> */}
@@ -193,11 +167,8 @@ function Contact() {
                     <MenuItem value="other">Other</MenuItem>
                   </TextField>
                 </div>
-                <div className="gap-4 flex ">
-                  <label
-                    htmlFor="Name"
-                    className="font-bold w-24 items-center justify-center mx-auto  my-auto"
-                  >
+                <div className="space-y-2">
+                  <label className="font-bold ml-2" htmlFor="Name">
                     Message :
                   </label>
                   {/* <br /> */}

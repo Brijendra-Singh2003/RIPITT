@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 import "./BlogId.css";
 
@@ -15,7 +15,7 @@ function BlogById() {
       .then(setContent);
   }, []);
   return (
-    <div className="container max-w-4xl mx-auto">
+    <div className="container max-w-4xl mx-auto p-4">
       <ReactMarkdown className="noTailwind">{content}</ReactMarkdown>
     </div>
   );

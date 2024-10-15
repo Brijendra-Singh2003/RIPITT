@@ -1,11 +1,10 @@
 /* customBlogReset.css */
 .noTailwind {
     all: unset;
-    font-family: inherit;
 
     /* Headings */
     h1 {
-        font-size: 2.25rem;
+        font-size: 2.1rem;
         /* 36px */
         font-weight: 600;
         margin: 1.5rem 0;
@@ -48,10 +47,11 @@
 
     /* Paragraphs */
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
         /* 16px */
         line-height: 1.625;
         margin: 1rem 0;
+        text-align: justify;
     }
 
     /* Blockquote */
@@ -136,9 +136,13 @@
     }
 }
 
-.noTailwind * {
-    all: unset;
-    font-family: inherit;
-    display: revert;
-    /* Ensures the default display for tags like <p>, <h1>, <ul> */
+@media (min-width: 640px) {
+    .noTailwind {
+        p {
+            font-size: 1.2rem;
+        }
+        h1 {
+            font-size: 2.25rem;
+        }
+    }
 }

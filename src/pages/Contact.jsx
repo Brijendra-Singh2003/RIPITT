@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, PinDrop as MapPin } from "@mui/icons-material";
 import {
   TextField,
   // Textarea,

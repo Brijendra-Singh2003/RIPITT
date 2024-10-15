@@ -61,12 +61,12 @@ const AboutPage = () => {
     <div className="bg-gray-100 min-h-screen">
       {/* Hero Section */}
       <div
-        className="bg-blue-500 py-32 text-center text-white bg-cover"
+        className="bg-blue-500 py-16 text-center text-white bg-cover"
         style={{
           backgroundImage: `url(${bg02})`,
         }}
       >
-        <div className="container mx-auto py-6">
+        <div className="container mx-auto py-12">
           <h1 className="text-5xl font-bold mb-4">Our Leadership</h1>
           <p className="text-xl font-semibold max-w-2xl mx-auto">
             Meet the visionaries driving innovation and excellence at RIPITT

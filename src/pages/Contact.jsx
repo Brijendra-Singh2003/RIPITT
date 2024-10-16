@@ -69,8 +69,12 @@ function Contact() {
                 <Stack item xs={12} sm={4}>
                   <Box display="flex" alignItems="center">
                     <MapPin className="mr-2 text-blue-600" />
-                    <Typography>
-                      123 Innovation Street, Tech City, TC 12345
+                    <Typography className="flex-col">
+                      IIIT Bhubaneswar, Near STPI
+                      <br />
+                      <span>Gothapatna - Bhubaneswar</span>
+                      <br />
+                      <span>Odisha</span>
                     </Typography>
                   </Box>
                 </Stack>

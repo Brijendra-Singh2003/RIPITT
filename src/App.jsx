@@ -32,7 +32,7 @@ const achievements = [
   { title: "Industry Partners", count: 30, icon: Group },
 ];
 
-const upcomingEvents = [
+export const upcomingEvents = [
   {
     title: "RIPITT Inauguration",
     date: "8th November 2024",

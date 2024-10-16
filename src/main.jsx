@@ -8,6 +8,9 @@ import Footer from "./components/Footer";
 import { BiLoaderAlt } from "react-icons/bi";
 import NextTopLoader from "nextjs-toploader";
 
+import Events from "./pages/admin/events.jsx";
+import AdminSideBar from "./components/AdminSideBar.jsx";
+
 const App = lazy(() => import("./App.jsx"));
 const AboutUs = lazy(() => import("./pages/Abut.jsx"));
 const Blog = lazy(() => import("./pages/Blog.jsx"));
@@ -45,6 +48,10 @@ createRoot(document.getElementById("root")).render(
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/rnd" element={<ResearchAndDevelopmentPage />} />
           <Route path="/:not_found" element={<NotFound />} />
+        </Route>
+
+        <Route path="/admin" element={<AdminSideBar />}>
+          <Route path="/admin/events" element={<Events />}/>
         </Route>
       </Routes>
     </BrowserRouter>

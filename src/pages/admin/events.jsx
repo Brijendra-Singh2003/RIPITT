@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "../../components/ui/Table";
-import { TableFooter, TablePagination } from "@mui/material";
+import { TablePagination } from "@mui/material";
 import { Input } from "../../components/ui/input";
 import { upcomingEvents } from "../../App";
 
@@ -59,15 +59,15 @@ export default function Events() {
     <main className="w-full min-h-screen md:p-4">
       <div className="py-4 flex items-center">
         <Input
-          className="max-w-sm bg-background mx-2 md:mx-0 shadow"
+          className="max-w-sm mx-2 md:mx-0"
           placeholder="Search user..."
           onChange={filter}
         />
       </div>
 
-      <Table className="border bg-white">
-        <TableHeader>
-          <TableRow className="bg-slate-200">
+      <Table className="border">
+        <TableHeader className="bg-muted">
+          <TableRow>
             <TableHead className="font-bold">Event Name</TableHead>
             <TableHead className="font-bold">Event Date</TableHead>
             <TableHead className="font-bold">Description</TableHead>
@@ -92,24 +92,18 @@ export default function Events() {
             </TableRow>
           )}
         </TableBody>
-        <TableFooter className="bg-slate-200 border">
-          <TableRow>
-            <TableCell colSpan={4} className="p-0">
-              <TablePagination
-                className=" w-full"
-                style={{ color: "black" }}
-                component="div"
-                count={filteredList.length} // Total number of invoices
-                page={page}
-                onPageChange={handleChangePage}
-                rowsPerPage={rowsPerPage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-                rowsPerPageOptions={[5, 8, 10, 25]} // Options for rows per page
-              />
-            </TableCell>
-          </TableRow>
-        </TableFooter>
       </Table>
+      <TablePagination
+        className="border w-full bg-muted"
+        style={{ color: "black" }}
+        component="div"
+        count={filteredList.length} // Total number of invoices
+        page={page}
+        onPageChange={handleChangePage}
+        rowsPerPage={rowsPerPage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        rowsPerPageOptions={[5, 8, 10, 25]} // Options for rows per page
+      />
     </main>
   );
 }

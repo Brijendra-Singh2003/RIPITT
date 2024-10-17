@@ -100,7 +100,7 @@ const ResearchAndDevelopmentPage = () => {
             <Tab label="Flagship Projects" />
           </Tabs>
           <Box sx={{ mt: 3 }}>
-            {tabValue === 0 && (
+            {tabValue === 0 ? (
               <Card>
                 <CardContent>
                   <Typography variant="h5" gutterBottom>
@@ -126,8 +126,7 @@ const ResearchAndDevelopmentPage = () => {
                   />
                 </CardContent>
               </Card>
-            )}
-            {tabValue === 1 && (
+            ) : (
               <Card>
                 <CardContent>
                   <Typography variant="h5" gutterBottom>

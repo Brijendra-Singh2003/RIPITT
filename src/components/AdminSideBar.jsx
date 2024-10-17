@@ -8,8 +8,8 @@ import { BiLoaderAlt } from "react-icons/bi";
 
 export default function AdminSideBar() {
   return (
-    <div className="lg:grid bg-gray-200 grid-cols-5 xl:grid-cols-6 min-h-screen">
-      <div className="bg-white w-full lg:px-4 lg:py-4 shadow h-full border-r">
+    <div className="lg:grid grid-cols-5 xl:grid-cols-6 min-h-screen">
+      <div className="bg-white w-full lg:px-4 lg:py-4 h-full border-r">
         <Link
           to="/"
           onClick={ScrollToTop}
@@ -53,7 +53,7 @@ export default function AdminSideBar() {
         </ul>
       </div>
 
-      <main className="col-span-4 xl:col-span-5 bg-zinc-100">
+      <main className="col-span-4 xl:col-span-5 min-h-screen flex flex-col">
         <Suspense
           fallback={
             <BiLoaderAlt size={64} className="animate-spin mx-auto mt-24" />
@@ -73,8 +73,8 @@ const SidebarLink = ({ href, children }) => {
         cn(
           "flex lg:flex-row p-2 lg:border flex-col lg:gap-2 items-center lg:px-5 lg:py-3 rounded ",
           isActive
-            ? "text-blue-700 border-blue-700/50"
-            : "text-black/75 hover:text-blue-700"
+            ? "text-blue-700 bg-blue-50 border-blue-700/50"
+            : "text-muted-foreground hover:text-blue-700 hover:bg-blue-50"
         )
       }
       to={href}

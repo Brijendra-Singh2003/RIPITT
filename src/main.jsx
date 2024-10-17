@@ -52,6 +52,7 @@ createRoot(document.getElementById("root")).render(
 
         <Route path="/admin" element={<AdminSideBar />}>
           <Route path="/admin/events" element={<Events />}/>
+          <Route path="/admin/:not_found" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

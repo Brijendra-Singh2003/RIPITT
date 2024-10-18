@@ -9,6 +9,7 @@ import { BiLoaderAlt } from "react-icons/bi";
 import NextTopLoader from "nextjs-toploader";
 
 import Events from "./pages/admin/events.jsx";
+import EventsForm from "./pages/admin/eventsForm.jsx";
 import AdminSideBar from "./components/AdminSideBar.jsx";
 
 const App = lazy(() => import("./App.jsx"));
@@ -51,7 +52,8 @@ createRoot(document.getElementById("root")).render(
         </Route>
 
         <Route path="/admin" element={<AdminSideBar />}>
-          <Route path="/admin/events" element={<Events />}/>
+          <Route path="/admin/events" element={<Events />} />
+          <Route path="/admin/events/:id" element={<EventsForm />} />
           <Route path="/admin/:not_found" element={<NotFound />} />
         </Route>
       </Routes>

@@ -68,19 +68,19 @@ function Contact() {
 
               <Stack container spacing={4} style={{ paddingTop: "50px" }}>
                 <Stack item xs={12} sm={4}>
-                  <Box display="flex" alignItems="center">
+                  <Box display="flex">
                     <Mail className="mr-2 text-blue-600" />
                     <Typography>info@ripitt.com</Typography>
                   </Box>
                 </Stack>
                 <Stack item xs={12} sm={4}>
-                  <Box display="flex" alignItems="center">
+                  <Box display="flex">
                     <Phone className="mr-2 text-blue-600" />
                     <Typography>+1 (555) 123-4567</Typography>
                   </Box>
                 </Stack>
                 <Stack item xs={12} sm={4}>
-                  <Box display="flex" alignItems="center">
+                  <Box display="flex">
                     <MapPin className="mr-2 text-blue-600" />
                     <Typography className="flex-col">
                       IIIT Bhubaneswar, Near STPI
@@ -144,9 +144,8 @@ function Contact() {
               <form className="space-y-6">
                 <div className="space-y-2">
                   <label htmlFor="Name" className="font-bold ml-2">
-                    Name :
+                    Name<span className="text-red-600">*</span> :
                   </label>
-                  {/* <br /> */}
 
                   <TextField
                     fullWidth
@@ -158,9 +157,8 @@ function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="font-bold ml-2" htmlFor="email">
-                    Email :
+                    Email<span className="text-red-600">*</span> :
                   </label>
-                  {/* <br /> */}
 
                   <TextField
                     fullWidth
@@ -172,9 +170,8 @@ function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="font-bold ml-2" htmlFor="Name">
-                    Inquiry :
+                    Inquiry<span className="text-red-600">*</span> :
                   </label>
-                  {/* <br /> */}
 
                   <TextField
                     select
@@ -184,7 +181,7 @@ function Contact() {
                     required
                     className="bg-white"
                   >
-                    <MenuItem value="">Select an option</MenuItem>
+                    {/* <MenuItem value="">Select an option</MenuItem> */}
                     <MenuItem value="incubation">Incubation</MenuItem>
                     <MenuItem value="mentorship">Mentorship</MenuItem>
                     <MenuItem value="collaboration">Collaboration</MenuItem>
@@ -193,9 +190,8 @@ function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label className="font-bold ml-2" htmlFor="Name">
-                    Message :
+                    Message<span className="text-red-600">*</span> :
                   </label>
-                  {/* <br /> */}
 
                   <TextField
                     fullWidth

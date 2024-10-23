@@ -5,12 +5,12 @@ import { Input } from "../../components/ui/input";
 import { Button } from "@mui/material";
 
 const defaultData = {
-    title: "",
-    startDate: "",
-    image_url: "",
-    link: "",
-    description: "",
-  };
+  title: "",
+  startDate: "",
+  image_url: "",
+  link: "",
+  description: "",
+};
 
 function EventsForm() {
   const { id } = useParams();
@@ -55,6 +55,7 @@ function EventsForm() {
           <Input
             onChange={handleChange}
             value={data.title}
+            required
             id="title"
             type="text"
             name="title"
@@ -62,18 +63,57 @@ function EventsForm() {
           />
         </label>
 
-        <label htmlFor="startdate">
-          <h3 className="text-sm ml-2 mb-1 md:inline">
-            Start date <span className="text-red-600">*</span>
-          </h3>
-          <Input
-            onChange={handleChange}
-            value={data.startDate}
-            id="startdate"
-            type="date"
-            name="startDate"
-          />
-        </label>
+        <div className="flex sm:grid grid-cols-2 gap-4 w-full">
+          <label htmlFor="startdate">
+            <h3 className="text-sm ml-2 mb-1 md:inline">
+              Start date <span className="text-red-600">*</span>
+            </h3>
+            <Input
+              onChange={handleChange}
+              value={data.startDate}
+              required
+              id="startdate"
+              type="date"
+              name="startDate"
+            />
+          </label>
+          <label htmlFor="starttime">
+            <h3 className="text-sm ml-2 mb-1 md:inline">Start Time</h3>
+            <Input
+              onChange={handleChange}
+              value={data.startTime}
+              id="starttime"
+              type="time"
+              name="startTime"
+            />
+          </label>
+        </div>
+
+        <div className="flex sm:grid grid-cols-2 gap-4 w-full">
+          <label htmlFor="startdate">
+            <h3 className="text-sm ml-2 mb-1 md:inline">
+              End date
+            </h3>
+            <Input
+              onChange={handleChange}
+              value={data.endDate}
+              required
+              id="enddate"
+              type="date"
+              name="endDate"
+            />
+          </label>
+          <label htmlFor="endtime">
+            <h3 className="text-sm ml-2 mb-1 md:inline">End Time</h3>
+            <Input
+              onChange={handleChange}
+              value={data.endTime}
+              id="endtime"
+              type="time"
+              name="endTime"
+            />
+          </label>
+        </div>
 
         <label htmlFor="image_url">
           <h3 className="text-sm ml-2 mb-1 md:inline">Image link</h3>
@@ -104,17 +144,20 @@ function EventsForm() {
             Description <span className="text-red-600">*</span>
           </h3>
           <textarea
-            className="border rounded px-3 py-1 block w-full text-sm"
+            className="border border-input rounded px-3 py-1 block w-full text-sm"
             onChange={handleChange}
             value={data.description}
-            rows="3"
+            required
+            rows="4"
             id="description"
             name="description"
             placeholder="Description..."
           />
         </label>
 
-        <Button variant="contained" type="submit">submit</Button>
+        <Button variant="contained" type="submit">
+          submit
+        </Button>
       </form>
     </div>
   );

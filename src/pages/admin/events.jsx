@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "../../components/ui/Table";
-import { Button, Menu, TablePagination } from "@mui/material";
+import { Button, TablePagination } from "@mui/material";
 import { Input } from "../../components/ui/input";
 import { deleteEvent, getEvents } from "../../hooks/Requests";
 import { Link } from "react-router-dom";
@@ -25,14 +25,6 @@ export default function Events() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
 
   const filteredList = events.filter(
     (event) =>
@@ -45,6 +37,15 @@ export default function Events() {
     page * rowsPerPage,
     page * rowsPerPage + rowsPerPage
   );
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
 
   function Filter(e) {
     const key = e.target.value.trim().toLowerCase();
@@ -81,8 +82,9 @@ export default function Events() {
           <TableHeader className="bg-muted">
             <TableRow>
               <TableHead className="sr-only">Image</TableHead>
-              <TableHead className="font-bold">Event Name</TableHead>
-              <TableHead className="font-bold">Event Date</TableHead>
+              <TableHead className="font-bold">Name</TableHead>
+              <TableHead className="font-bold">Start Date</TableHead>
+              <TableHead className="font-bold">End Date</TableHead>
               <TableHead className="font-bold">Description</TableHead>
               <TableHead className="font-bold">Link</TableHead>
               <TableHead className="sr-only">Action</TableHead>
@@ -97,11 +99,10 @@ export default function Events() {
                   </TableCell>
                   <TableCell className="text-nowrap">{event.title}</TableCell>
                   <TableCell className="text-nowrap">
-                    {new Date(event.startDate).toLocaleDateString("en-UK", {
-                      month: "short",
-                      day: "2-digit",
-                      year: "numeric",
-                    })}
+                    {formatDate(event.startDate)} {formatTime(event.startTime)}
+                  </TableCell>
+                  <TableCell className="text-nowrap">
+                    {formatDate(event.endDate)} {formatTime(event.endTime)}
                   </TableCell>
                   <TableCell>
                     <span className="line-clamp-1 break-words min-w-64">
@@ -160,3 +161,23 @@ export default function Events() {
     </div>
   );
 }
+
+function formatTime(time) {
+  const [hour, min] = time.split(":");
+  let hourInInt = Number.parseInt(hour);
+  let am = "am";
+
+  if (hourInInt >= 12) {
+    am = "pm";
+    hourInInt -= 12;
+  }
+
+  return hourInInt + ":" + min + " " + am;
+}
+
+const formatDate = (date) =>
+  new Date(date).toLocaleDateString("en-UK", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });

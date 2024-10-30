@@ -3,10 +3,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import { addEvent, getEvents } from "../../hooks/Requests";
 import { Input } from "../../components/ui/input";
 import { Button } from "@mui/material";
+import { formatDate } from "../../lib/util";
 
 const defaultData = {
   title: "",
-  startDate: "",
+  startDate: formatDate(Date.now()),
+  startTime: "00:00",
+  endDate: formatDate(Date.now()),
+  endTime: "23:59",
   image_url: "",
   link: "",
   description: "",
@@ -32,8 +36,17 @@ function EventsForm() {
     if (id !== "new") {
       getEvents(id)
         .then((event) => {
-          console.log(event);
-          setData({ ...event, id });
+          setData({
+            id,
+            title: event.title,
+            startDate: formatDate(event.startDate),
+            startTime: event.startTime,
+            endDate: formatDate(event.endDate),
+            endTime: event.endTime,
+            image_url: event.image_url,
+            link: event.link,
+            description: event.description,
+          });
         })
         .catch((err) => {
           console.error(err);
@@ -92,7 +105,7 @@ function EventsForm() {
         <div className="flex sm:grid grid-cols-2 gap-4 w-full">
           <label htmlFor="startdate">
             <h3 className="text-sm ml-2 mb-1 md:inline">
-              End date
+              End date <span className="text-red-600">*</span>
             </h3>
             <Input
               onChange={handleChange}

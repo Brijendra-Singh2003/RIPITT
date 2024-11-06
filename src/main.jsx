@@ -11,7 +11,8 @@ import NextTopLoader from "nextjs-toploader";
 import Events from "./pages/admin/events.jsx";
 import EventsForm from "./pages/admin/eventsForm.jsx";
 import AdminSideBar from "./components/AdminSideBar.jsx";
-
+import Projects from "./pages/admin/project";
+import ProjectsForm from "./pages/admin/projectForm";
 const App = lazy(() => import("./App.jsx"));
 const AboutUs = lazy(() => import("./pages/Abut.jsx"));
 const Blog = lazy(() => import("./pages/Blog.jsx"));
@@ -55,6 +56,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/admin/events" element={<Events />} />
           <Route path="/admin/events/:id" element={<EventsForm />} />
           <Route path="/admin/:not_found" element={<NotFound />} />
+          <Route path="/admin/projects" element={<Projects />} />
+          <Route path="/admin/projects/:id" element={<ProjectsForm />} />
         </Route>
       </Routes>
     </BrowserRouter>

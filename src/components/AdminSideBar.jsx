@@ -41,9 +41,9 @@ export default function AdminSideBar() {
             <span className="text-xs md:text-base">Events</span>
           </SidebarLink>
 
-          <SidebarLink href="/admin/users">
+          <SidebarLink href="/admin/projects">
             <IoIosPeople />
-            <span className="text-xs md:text-base">Users</span>
+            <span className="text-xs md:text-base">Projects</span>
           </SidebarLink>
 
           <SidebarLink href="/admin/testimonials">

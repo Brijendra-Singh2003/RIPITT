@@ -1,3 +1,4 @@
+import axios from "axios";
 const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
 export async function getEvents(id) {
@@ -13,6 +14,21 @@ export async function getEvents(id) {
       }
     }
   } catch (error) {
+    console.error(error);
+  }
+  return [];
+}
+export async function getProjects() {
+  try {
+    const responce = await axios.get(SERVER_URL + "/api/project");
+    console.log(responce);
+    if (responce.statusText === "OK") {
+      const data = responce.data;
+      if (data.success) {
+        return data.data;
+      }
+    }
+  } catch {
     console.error(error);
   }
   return [];
@@ -34,6 +50,19 @@ export async function addEvent(event) {
     }
   } catch (error) {
     console.error("Network error:", error);
+  }
+}
+
+export async function addProject(data) {
+  try {
+    const result = await axios.post(SERVER_URL + "/api/project/", data, {
+      headers: { "content-type": "application/json" },
+    });
+    console.log("result is ", result);
+    return result;
+  } catch (error) {
+    console.log("error is ", error);
+    return null;
   }
 }
 

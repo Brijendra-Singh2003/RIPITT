@@ -53,30 +53,26 @@ const HomePage = () => {
   return (
     <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
       {/* Hero Section */}
-      <Box
-        sx={{
-          bgcolor: "primary.main",
-          color: "primary.contrastText",
-          py: 8,
-          backgroundColor: "#42a5f5",
-          backgroundImage: `url(${bg01})`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="container mx-auto">
-          <Box textAlign="center" py={6}>
-            <h2 className="font-bold text-4xl sm:text-5xl">
-              Advancing Ideas, Innovating Reality
-            </h2>
-            <p className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance">
-              RIPITT Foundation is a pioneering research and innovation hub
-              dedicated to nurturing breakthrough technologies and empowering
-              the next generation of entrepreneurs.
-            </p>
-          </Box>
+      <div className="bg-blue-500 w-full relative h-96 object-cover sm:bg-fixed text-center text-white bg-cover">
+        <video
+          className="h-full w-full object-cover"
+          src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Vd3bj2jPe/videoblocks-aerial-view-schoolchild-walking-on-sport-ground-in-school-yard_hxqqjosdh__0f8ab5251357f63a3eeac109216bde76__P360.mp4"
+          autoPlay
+          muted
+          loop
+          style={{background: `url(${bg01})`}}
+        ></video>
+        <div className="h-full w-full z-10 flex flex-col justify-center absolute top-0 bg-black/30">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">
+            Advancing Ideas, Innovating Reality
+          </h1>
+          <p className="mt-4 max-w-5xl mx-auto text-sm sm:text-base md:text-lg text-balance">
+            RIPITT Foundation is a pioneering research and innovation hub
+            dedicated to nurturing breakthrough technologies and empowering the
+            next generation of entrepreneurs.
+          </p>
         </div>
-      </Box>
+      </div>
 
       {/* Achievement Stats */}
       <Container maxWidth="lg" sx={{ my: 8 }}>

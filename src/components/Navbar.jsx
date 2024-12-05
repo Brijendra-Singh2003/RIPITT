@@ -20,71 +20,22 @@ const NLinks = ({ name, href }) => (
 );
 
 function Navbar() {
-  const [prevScrollPos, setprevScrollPos] = useState(0);
-  const [top, setTop] = useState(0);
   const [open, setopen] = useState(false);
-  const navRef = useRef();
 
   function toggle() {
     setopen((prevState) => !prevState);
-    setTop(0);
 
-    // if (document.body.style.overflowY === "hidden") {
-    //   document.body.style.overflowY = "";
-    // } else {
-    //   document.body.style.overflowY = "hidden";
-    // }
+    if (document.body.style.overflowY === "hidden") {
+      document.body.style.overflowY = "";
+    } else {
+      document.body.style.overflowY = "hidden";
+    }
   }
-
-  useEffect(() => {
-    window.onscroll = function () {
-      const HEIGHT = navRef.current.clientHeight + 2;
-
-      navRef.current.classList.remove("duration-300");
-      let currentScrollPos = window.scrollY;
-
-      if (navRef.current) {
-        const newTop = top + prevScrollPos - currentScrollPos;
-        if (open || newTop > 0) {
-          setTop(0);
-        } else if (newTop < -HEIGHT) {
-          setTop(-HEIGHT);
-        } else {
-          setTop(newTop);
-        }
-      }
-
-      setprevScrollPos(currentScrollPos);
-    };
-
-    window.onscrollend = () => {
-      const HEIGHT = navRef.current.clientHeight + 2;
-
-      navRef.current.classList.add("duration-300");
-
-      if (top < -HEIGHT / 2 && window.scrollY > HEIGHT) {
-        setTop(-HEIGHT);
-      } else {
-        setTop(0);
-      }
-    };
-
-    return () => {
-      window.onscroll = null;
-      window.onscrollend = null;
-      // document.body.overflowY = "";
-    };
-  });
 
   return (
     <>
-      <nav
-        className="w-full bg-white z-20 flex flex-col justify-center items-center sticky shadow"
-        id="nav"
-        style={{ top }}
-        ref={navRef}
-      >
-        <div className="container h-20 max-w-7xl flex items-center justify-between py-2 font-medium px-4 lg:px-16">
+      <nav className="w-full bg-white z-50 flex flex-col justify-center items-center sticky top-0 shadow">
+        <div className="container max-w-7xl flex items-center justify-between py-2 sm:py-3 font-medium px-2 sm:px-8 lg:px-16">
           <Link
             to="/"
             onClick={ScrollToTop}
@@ -138,7 +89,7 @@ function Navbar() {
       </nav>
       <div
         className={cn(
-          "fixed md:hidden z-10 border-t w-full top-20 bg-white h-screen overflow-y-scroll",
+          "fixed md:hidden z-50 border-t w-full top-16 sm:top-20 bg-white h-screen overflow-y-scroll",
           open ? styles.open : styles.close
         )}
       >
